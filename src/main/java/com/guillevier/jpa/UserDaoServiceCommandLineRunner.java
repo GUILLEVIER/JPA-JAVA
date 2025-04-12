@@ -11,17 +11,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserDaoServiceCommandLineRunner implements CommandLineRunner {
 
-    private static final Logger log
-            = LoggerFactory.getLogger(UserDaoServiceCommandLineRunner.class);
+  private static final Logger log
+          = LoggerFactory.getLogger(UserDaoServiceCommandLineRunner.class);
 
-    @Autowired
-    private UserDAOService userDaoService;
+  @Autowired
+  private UserDAOService userDaoService;
 
-    @Override
-    public void run(String... arg0) throws Exception {
-        User user = new User("Jack", "Admin");
-        //New User is created : User [id=1, name=Jack, role=Admin]
-        long insert = userDaoService.insert(user);
-        log.info("New User is created : " + user);
-    }
+  @Override
+  public void run(String... arg0) throws Exception {
+    User user = new User("Jack", "Admin");
+    //New User is created : User [id=1, name=Jack, role=Admin]
+    long insert = userDaoService.insert(user);
+    log.info("New User is created : " + user);
+  }
 }
